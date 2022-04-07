@@ -1,0 +1,24 @@
+{
+  "name": "lib-markdown",
+  "version": "1.0.0",
+  "description": "lib em NodeJs para verificar se os links em um blog estão disponiveis.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeFNavas/lib-markdown.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeFNavas/lib-markdown/issues"
+  },
+  "homepage": "https://github.com/FelipeFNavas/lib-markdown#readme",
+  "dependencies": {
+    "chalk": "^5.0.1"
+  },
+  "type": "module"
+}
