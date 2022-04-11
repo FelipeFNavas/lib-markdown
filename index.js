@@ -1,4 +1,5 @@
 import chalk from "chalk";
+import path from "path";
 import fs from "fs";
 
 function extractLinks(text) {
@@ -11,17 +12,25 @@ function extractLinks(text) {
       [temp[1]]: temp[2],
     });
   }
-  return resultArray;
+  return resultArray.length === 0 ? "Não há links" : resultArray;
 }
 
-async function getFile(filepath) {
+export default async function getFile(filepath) {
   const encoding = "utf-8";
+  const absolutePath = path.join("__dirname", "..", filepath);
+
   try {
-    const text = await fs.promises.readFile(filepath, encoding);
-    console.log(extractLinks(text));
+    const files = await fs.promises.readdir(absolutePath, { encoding });
+
+    const result = await Promise.all(
+      files.map(async (file) => {
+        const filepath = `${absolutePath}/${file}`;
+        const text = await fs.promises.readFile(filepath, encoding);
+        return extractLinks(text);
+      })
+    );
+    return result;
   } catch (err) {
     throw new Error(chalk.red(err.code, "não há arquivo no caminho"));
   }
 }
-
-getFile("./files/text1.md");
