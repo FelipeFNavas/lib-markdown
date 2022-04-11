@@ -4,7 +4,8 @@
   "description": "lib em NodeJs para verificar se os links em um blog estão disponiveis.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cli": "node cli.js ./files/"
   },
   "repository": {
     "type": "git",
