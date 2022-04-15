@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/FelipeFNavas/lib-markdown#readme",
   "dependencies": {
-    "chalk": "^5.0.1"
+    "chalk": "^5.0.1",
+    "es6-promise": "^4.2.8",
+    "node-fetch": "^3.2.3"
   },
   "type": "module"
 }
